@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#statbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100vw;
+    height: 10vh;
+    background-color: lightgrey;
+}
+
+#bar1 {
+    width: 20vw;
+    height: 5vh;
+    background-color: blue;
+}
+
+#bar2 {
+    width: 20vw;
+    height: 5vh;
+    background-color: red;
+    justify-content: flex-end;
+}
+
+#mainbody {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
+    height: 90vh;
+    background-image: url(img/background.jpg);
+    background-size: 100%;
+}
+
+.charstyle {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    width: 20vw;
+    height: 60vh;
+}
+
+.boxes {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100vw;
+    height: 15vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+#line {
+    width: 100%;
+}
+
+#player {
+    width: 50%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+}
