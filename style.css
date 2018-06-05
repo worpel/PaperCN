@@ -13,20 +13,20 @@ body {
 #statbar {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 100vw;
     height: 10vh;
 }
 
 #healthBar1 {
-    width: 20vw;
+    width: 50vw;
     height: 5vh;
     background-color: #A4EC2A;
     color: white;
 }
 
 #healthBar2 {
-    width: 20vw;
+    width: 50vw;
     height: 5vh;
     background-color: #FF5A5A;
     justify-content: flex-end;
