@@ -3,10 +3,10 @@ class Person{
     this._name = name;
     this._health = hp;
     this._maxHealth = hp;
-    this._resistance = resistance
+    this._resistance = resistance;
     this._alive = true;
     // {move:[elementaryType, damage]} 0 = fighting, 1= water 2 = fire.0 beats 1 beats 2 beats 0.
-    this._
+    this._moves = moveList;
     }
 
     get resistance(){
@@ -99,13 +99,14 @@ function fight(attackType){
         }
         printHealth(computer, "healthBar2");
         healthBarDraw("healthBar2", computer);
+        setTimeout(function(){comTurn(); }, 700);
     }
+}
+function comTurn(){
     if (!playerTurn && inBattle){
         //computers turn
         computerMove = "fireball";
-
-        setTimeout(function() {
-            dealDamage(computer, player, computerMove);
+        dealDamage(computer, player, computerMove);
         playerTurn = true;
         if (!player.alive){
             inBattle = false;
@@ -113,7 +114,7 @@ function fight(attackType){
         }
         printHealth(player, "healthBar1");
         healthBarDraw("healthBar1", player);
-        }, 700)
+        
     }
 }
 
