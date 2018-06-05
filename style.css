@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Poor+Story');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display|Yanone+Kaffeesatz');
 * {
     margin: 0;
     padding: 0;
@@ -13,24 +13,25 @@ body {
 #statbar {
     display: flex;
     align-items: center;
+    text-align: center;
     justify-content: space-between;
     width: 100vw;
-    height: 10vh;
+    height: 5vh;
+    color: white;
+    font-family: Playfair Display;
+    font-size: 1.5rem;
 }
 
 #healthBar1 {
     width: 50vw;
     height: 5vh;
     background-color: #A4EC2A;
-    color: white;
 }
 
 #healthBar2 {
     width: 50vw;
     height: 5vh;
     background-color: #FF5A5A;
-    justify-content: flex-end;
-    color: white;
 }
 
 #mainbody {
@@ -57,8 +58,20 @@ body {
     align-items: center;
     width: 100vw;
     height: 15vh;
+    text-align: center;
+    font-family: Yanone Kaffeesatz;
+    font-size: 1.2rem;
     color: white;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+#boxoption1,
+#boxoption2,
+#boxoption3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
 #line {
