@@ -2,6 +2,7 @@ class Person{
     constructor(name, hp, resistance, moveList){
     this._name = name;
     this._health = hp;
+    this._maxHealth = hp;
     this._resistance = resistance
     this._alive = true;
     // {move:[elementaryType, damage]} 0 = fighting, 1= water 2 = fire.0 beats 1 beats 2 beats 0.
@@ -28,6 +29,10 @@ class Person{
         return this._moves;
     }
 
+    get maxHealth(){
+        return this._maxHealth;
+    }
+
     set health(newHealth){
         this._health = newHealth;
     }
@@ -46,26 +51,35 @@ class Person{
 }
 
 //global flag for turns
-playerTurn = true;
+let playerTurn = true;
 //global flag for battle state
-inBattle = true;
+let inBattle = true;
 //global player image
-playerImg = document.getElementById('playerimg');
+let playerImg = document.getElementById('playerimg');
 //global computer image
-computerImg = document.getElementById('computerimg');
+let computerImg = document.getElementById('computerimg');
 //global death image 
-deathImg = src = "./img/death.png";
+const deathImg = src = "./img/death.png";
 //global move types
-moves = {"hit":[0,10], "kick":[0,15],"strike":[0,25], "ink":[1,8], "watergun":[1,11], "waterbomb":[1,15], "fireball":[2, 11], "firearrow": [2, 17], "bullet": [2, 30]};
+const moves = {"hit":[0,10], "kick":[0,15],"strike":[0,25], "ink":[1,8], "watergun":[1,11], "waterbomb":[1,15], "fireball":[2, 11], "firearrow": [2, 17], "bullet": [2, 30]};
+// counts level
+let level = 1;
 
 
 //creates player and computer characters
 const player = new Person("Harry", 150, [0.5, 1, 2], ["hit","ink", "bullet"]);
 const computer = new Person("DrEvil", 150, [1, 0.2, 5], ["strike","ink", "bullet"]);
 
-//
+//helper function health bar 
+function healthBarDraw(id, person){
+    const bar = document.getElementById(id);
+    const relativeSize = 50*person.health/person.maxHealth
+    bar.style.width = relativeSize.toString() +"vw";
+}
 
-// reduces defenders health by value corresponding to attackers attackType
+healthBarDraw("healthBar1", player)
+
+// helper function reduces defenders health by value corresponding to attackers attackType
 function dealDamage (attacker,defender, attackType){
     //base damage
     const attack = moves[attackType];
@@ -85,13 +99,13 @@ function fight(attackType){
             die(computer);
         }
         printHealth(computer, "healthBar2");
-        console.log(computer.health)
+        healthBarDraw("healthBar2", computer);
     }
     if (!playerTurn && inBattle){
         //computers turn
         computerMove = "fireball";
 
-    setTimeout(function() {
+        setTimeout(function() {
             dealDamage(computer, player, computerMove);
         playerTurn = true;
         if (!player.alive){
@@ -99,7 +113,8 @@ function fight(attackType){
             die(player);
         }
         printHealth(player, "healthBar1");
-    }, 700)
+        healthBarDraw("healthBar1", player);
+        }, 700)
     }
 }
 
