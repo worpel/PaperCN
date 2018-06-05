@@ -58,9 +58,9 @@ const moves = {"hit":[0,10], "kick":[0,15],"strike":[0,25], "ink":[1,8], "waterg
 let level = 1;
 
 //playable characters
-const mario = new Person("Mario", 150, [2, 2, 1], ["hit","ink", "firearrow"]);
-const yoshi = new Person("Yoshi", 100, [0.5, 0.5, 1.5], ["strike","waterbomb", "fireball"]);
-const luigi = new Person("Luigi", 200, [3, 3, 2], ["kick","watergun", "bullet"]);
+const playMario = new Person("Mario", 150, [2, 2, 1], ["hit","ink", "firearrow"]);
+const playYoshi = new Person("Yoshi", 100, [0.5, 0.5, 1.5], ["strike","waterbomb", "fireball"]);
+const playLuigi = new Person("Luigi", 200, [3, 3, 2], ["kick","watergun", "bullet"]);
 
 //computer players
 
@@ -70,7 +70,7 @@ const bowser = new Person("Browser", 300*(1+(level/20)), [2, 7, 0.7], ["strike",
 
 
 //creates player and computer characters
-const player = new Person("Harry", 150, [0.5, 1, 2], ["hit","ink", "bullet"]);
+let player = new Person("Harry", 1, [0.5, 1, 2], ["hit","ink", "bullet"]);
 const computer = new Person("DrEvil", 150, [1, 2, 1], ["strike","ink", "bullet"]);
 
 // helper function sets html text by id
@@ -96,6 +96,18 @@ function characterSelect(character) {
     document.getElementById('playerimg').src = "img/" + character + ".png";
     playerImg.style.display = 'block'
     document.getElementById('selectBox').style.display = 'none';
+    if (character == "mario"){
+        player = playMario;
+    }
+    if (character == "yoshi"){
+        player = playYoshi;
+    }
+    if (character == "luigi"){
+        player = playLuigi;
+    }
+    printHealth(player, "healthBar1");
+    printHealth(computer, "healthBar2");
+    setMoveText();
 }
 
 //helper function health bar 
@@ -158,6 +170,3 @@ function die(character){
 }
 
 
-printHealth(player, "healthBar1");
-printHealth(computer, "healthBar2");
-setMoveText();
