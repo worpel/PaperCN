@@ -12,17 +12,19 @@
     background-color: lightgrey;
 }
 
-#bar1 {
+#healthBar1 {
     width: 20vw;
     height: 5vh;
     background-color: blue;
+    color: white;
 }
 
-#bar2 {
+#healthBar2 {
     width: 20vw;
     height: 5vh;
     background-color: red;
     justify-content: flex-end;
+    color: white;
 }
 
 #mainbody {
