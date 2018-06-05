@@ -71,7 +71,7 @@ const bowser = new Person("Browser", 300*(1+(level/20)), [2, 7, 0.7], ["strike",
 
 //creates player and computer characters
 const player = new Person("Harry", 150, [0.5, 1, 2], ["hit","ink", "bullet"]);
-const computer = new Person("DrEvil", 150, [1, 0.2, 2], ["strike","ink", "bullet"]);
+const computer = new Person("DrEvil", 150, [1, 2, 1], ["strike","ink", "bullet"]);
 
 // helper function sets html text by id
 
@@ -82,13 +82,17 @@ function setText(id, message){
 
 // helper function sets move option text
 function setMoveText(){
-    playerMoves = player.moves
-    setText("boxoption1",playerMoves[0])
-    setText("boxoption2",playerMoves[1])
-    setText("boxoption3",playerMoves[2])
+    playerMoves = player.moves;
+    setText("boxoption1",playerMoves[0]);
+    setText("boxoption2",playerMoves[1]);
+    setText("boxoption3",playerMoves[2]);
+    computerMoves = computer.moves;
+    setText("box2option1",computerMoves[0]);
+    setText("box2option2",computerMoves[1]);
+    setText("box2option3",computerMoves[2]);
 }
 
-setMoveText()
+
 
 //helper function health bar 
 function healthBarDraw(id, person){
@@ -103,7 +107,7 @@ function dealDamage (attacker,defender, attackType){
     //base damage
     const attack = moves[attackType];
     //with resistances
-    const netDamage = Math.ceil(attack[1]*defender.resistance[attack[0]]);
+    const netDamage = Math.ceil(attack[1]*defender.resistance[attack[0]]*(1+Math.random()/2));
     defender.takeHit(netDamage);
 }
 
@@ -126,7 +130,8 @@ function fight(attackNum){
 function comTurn(){
     if (!playerTurn && inBattle){
         //computers turn
-        computerMove = "fireball";
+        computerMove = computer.moves[Math.floor(Math.random()*3)];
+        console.log(computerMove);
         dealDamage(computer, player, computerMove);
         playerTurn = true;
         if (!player.alive){
@@ -149,5 +154,6 @@ function die(character){
 }
 
 
-printHealth(player, "healthBar1")
-printHealth(computer, "healthBar2")
+printHealth(player, "healthBar1");
+printHealth(computer, "healthBar2");
+setMoveText();
