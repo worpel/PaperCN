@@ -73,11 +73,10 @@ const computer = new Person("DrEvil", 150, [1, 0.2, 5], ["strike","ink", "bullet
 //helper function health bar 
 function healthBarDraw(id, person){
     const bar = document.getElementById(id);
-    const relativeSize = 50*person.health/person.maxHealth
+    const relativeSize = 50*person.health/person.maxHealth;
     bar.style.width = relativeSize.toString() +"vw";
 }
 
-healthBarDraw("healthBar1", player)
 
 // helper function reduces defenders health by value corresponding to attackers attackType
 function dealDamage (attacker,defender, attackType){
@@ -127,12 +126,6 @@ function die(character){
     return character == player ? playerImg.src = deathImg : computerImg.src = deathImg;
 }
 
-    //playerText = document.getElementById(textId);
-    //playerText.innerHTML = (textId + " --> health: " + person.health + " alive: " + person.alive);
-
 
 printHealth(player, "healthBar1")
 printHealth(computer, "healthBar2")
-//printText(player,"player1");
-//printText(computer, "player2");
-console.log(player.alive);
