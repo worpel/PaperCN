@@ -92,7 +92,11 @@ function setMoveText(){
     setText("box2option3",computerMoves[2]);
 }
 
-
+function characterSelect(character) {
+    document.getElementById('playerimg').src = "img/" + character + ".png";
+    playerImg.style.display = 'block'
+    document.getElementById('selectBox').style.display = 'none';
+}
 
 //helper function health bar 
 function healthBarDraw(id, person){

@@ -42,6 +42,64 @@ body {
     height: 90vh;
 }
 
+.playerSelect {
+    border: 2px solid;
+    position: absolute;
+    top: 10%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 74vw;
+    height: 49vh;
+    z-index: 1;
+    background-color: rgb(90, 184, 255);
+}
+
+.character {
+    border: 3px solid black;
+    display: flex;
+    align-content: space-between;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 16%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#characterOne {
+    background-image: url("img/mariopaper.png");
+    background-size: 68%;
+    background-repeat: no-repeat;
+    background-position: center; 
+}
+
+#characterOne:hover { 
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#characterTwo {
+    background-image: url("img/yoshi.png");
+    background-size: 74%;
+    background-repeat: no-repeat;
+    background-position: center; 
+}
+
+#characterTwo:hover { 
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#characterThree {
+    background-image: url("img/luigi.png");
+    background-size: 62%;
+    background-repeat: no-repeat;
+    background-position: center; 
+}
+
+#characterThree:hover { 
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
 .charstyle {
     display: flex;
     flex-wrap: wrap;
@@ -88,6 +146,7 @@ body {
     height: 60%;
     display: flex;
     justify-content: center;
+    transform: scaleX(-1);
 }
 
 #computer {
