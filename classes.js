@@ -65,13 +65,30 @@ const luigi = new Person("Luigi", 200, [3, 3, 2], ["kick","watergun", "bullet"])
 //computer players
 
 const goomba = new Person("Goomba", 75*(1+(level/20)), [1, 1, 1], ["hit","kick", "watergun"]);
-const squid = new Person("Squid", 50*(1+(level/20)), [1, 0.2, 0.1], ["strike","ink", "waterbomb"]);
-const bowser = new Person("Browser", 100*(1+(level/20)), [2, 7, 0.7], ["strike","ink", "bullet"]);
+const squid = new Person("Squid", 100*(1+(level/20)), [1, 0.2, 0.1], ["strike","ink", "waterbomb"]);
+const bowser = new Person("Browser", 300*(1+(level/20)), [2, 7, 0.7], ["strike","ink", "bullet"]);
 
 
 //creates player and computer characters
 const player = new Person("Harry", 150, [0.5, 1, 2], ["hit","ink", "bullet"]);
-const computer = new Person("DrEvil", 150, [1, 0.2, 5], ["strike","ink", "bullet"]);
+const computer = new Person("DrEvil", 150, [1, 0.2, 2], ["strike","ink", "bullet"]);
+
+// helper function sets html text by id
+
+function setText(id, message){
+    elementText = document.getElementById(id);
+    elementText.innerHTML = message;
+}
+
+// helper function sets move option text
+function setMoveText(){
+    playerMoves = player.moves
+    setText("boxoption1",playerMoves[0])
+    setText("boxoption2",playerMoves[1])
+    setText("boxoption3",playerMoves[2])
+}
+
+setMoveText()
 
 //helper function health bar 
 function healthBarDraw(id, person){
@@ -86,14 +103,15 @@ function dealDamage (attacker,defender, attackType){
     //base damage
     const attack = moves[attackType];
     //with resistances
-    const netDamage = attack[1]*defender.resistance[attack[0]];
+    const netDamage = Math.ceil(attack[1]*defender.resistance[attack[0]]);
     defender.takeHit(netDamage);
 }
 
 //called on button click to make player's turn
-function fight(attackType){
+function fight(attackNum){
     if (playerTurn && inBattle){
         //players turn
+        attackType = player.moves[attackNum];
         dealDamage(player, computer, attackType);
         playerTurn = false;
         if (!computer.alive){
