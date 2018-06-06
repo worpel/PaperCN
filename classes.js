@@ -63,12 +63,11 @@ const playYoshi = new Person("Yoshi", 100, [0.5, 0.5, 1.5], ["strike","waterbomb
 const playLuigi = new Person("Luigi", 200, [3, 3, 2], ["kick","watergun", "bullet"]);
 
 //computer players
-
 const goomba = new Person("Goomba", 75*(1+(level/20)), [1, 1, 1], ["hit","kick", "watergun"]);
 const squid = new Person("Squid", 100*(1+(level/20)), [1, 0.2, 0.1], ["strike","ink", "waterbomb"]);
 const bowser = new Person("Browser", 300*(1+(level/20)), [2, 7, 0.7], ["strike","ink", "bullet"]);
 
-const computerPlayers = [goomba, squid, bowser];
+const computerPlayers = [bowser, goomba, bowser];
 //creates player and computer characters
 let player = new Person("Harry", 1, [0.5, 1, 2], ["hit","ink", "bullet"]);
 const computer = new Person("DrEvil", 150, [1, 2, 1], ["strike","ink", "bullet"]);

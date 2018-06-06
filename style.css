@@ -5,7 +5,7 @@
 }
 
 body {
-    background-image: url(img/background.jpg);
+    background-image: url(img/mario-background.jpg);
     background-repeat: no-repeat;
     background-size: 110vw 100vh;
 }
@@ -79,7 +79,7 @@ body {
 }
 
 #characterTwo {
-    background-image: url("img/yoshi.png");
+    background-image: url("img/yoshipaper.png");
     background-size: 74%;
     background-repeat: no-repeat;
     background-position: center; 
@@ -90,7 +90,7 @@ body {
 }
 
 #characterThree {
-    background-image: url("img/luigi.png");
+    background-image: url("img/luigipaper.png");
     background-size: 62%;
     background-repeat: no-repeat;
     background-position: center; 
@@ -98,6 +98,50 @@ body {
 
 #characterThree:hover { 
     background-color: rgba(0, 0, 0, 0.7);
+}
+
+.enemyList {
+    position: absolute;
+    top: 20%;
+    left: 91%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 5.5vw;
+    height: 30vh;
+}
+
+.enemy {
+    border: 3px solid black;
+    display: flex;
+    align-content: space-between;
+    flex-wrap: wrap;
+    justify-content: start;
+    padding: 100%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#enemyOne {
+    background-image: url("img/goomba.png");
+    background-size: 68%;
+    background-repeat: no-repeat;
+    background-position: center; 
+}
+
+#enemyTwo {
+    background-image: url("img/squid.png");
+    background-size: 74%;
+    background-repeat: no-repeat;
+    background-position: center; 
+}
+
+#enemyThree {
+    background-image: url("img/bowser.png");
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center; 
 }
 
 .charstyle {
