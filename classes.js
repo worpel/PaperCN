@@ -145,6 +145,7 @@ function dealDamage(attacker, defender, attackType) {
     defender.takeHit(netDamage);
 }
 
+// draws health bars for computer and player
 function drawEverything(){
     printHealth(computer, "healthBar2");
     healthBarDraw("healthBar2", computer);
@@ -186,6 +187,8 @@ function comTurn() {
 
     }
 }
+
+// resets characters back to choose character screen and level back to 0
 function resetGame(){
     level = 0;
     player.setHealth(player.maxHealth);
@@ -204,7 +207,7 @@ function resetGame(){
     drawEverything();
 
 }
-
+//progesses onto the next character
 function continueGame(){
     level += 1;
     if (level >= computerPlayers.length){
@@ -217,7 +220,7 @@ function continueGame(){
         playerTurn = true;
     }
 }
-
+//button handler for modal when enemy or character has died
 function resetOrContinue(){
     console.log(level);
     if (player.alive && computer.alive == false){
