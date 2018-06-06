@@ -116,7 +116,15 @@ function healthBarDraw(id, person){
     const relativeSize = 50*person.health/person.maxHealth;
     bar.style.width = relativeSize.toString() +"vw";
 }
-
+//helper function for printing health text
+function printHealth(person, textId){
+    playerHealth = document.getElementById(textId);
+    playerHealth.innerHTML = (person.health);
+}
+//helper function displaying death image
+function die(character){
+    return character == player ? playerImg.src = deathImg : computerImg.src = deathImg;
+}
 
 // helper function reduces defenders health by value corresponding to attackers attackType
 function dealDamage (attacker,defender, attackType){
@@ -159,14 +167,3 @@ function comTurn(){
         
     }
 }
-
-function printHealth(person, textId){
-    playerHealth = document.getElementById(textId);
-    playerHealth.innerHTML = (person.health);
-}
-
-function die(character){
-    return character == player ? playerImg.src = deathImg : computerImg.src = deathImg;
-}
-
-
