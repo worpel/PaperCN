@@ -50,8 +50,6 @@ let inBattle = true;
 let playerImg = document.getElementById('playerimg');
 //global computer image
 let computerImg = document.getElementById('computerimg');
-//global death image 
-const deathImg = src = "./img/death1.png";
 //global move types
 const moves = {
     "hit": [0, 10],
@@ -67,16 +65,21 @@ const moves = {
 // counts level
 let level = 0;
 
+//image dictionary
+images = {"mario":"img/mario2.png", "yoshi": "img/yoshi.png", "luigi": "img/luigi.png",
+        "mario2D": "img/mario.png", "yoshi2D": "yoshipaper.png", "luigi2D": "img/luigipaper.png",
+         "dead":"img/death1.png", 
+        "goomba": "img/goomba.png", "squid": "img/squid.png", "bowser": "img/bowser.png" };
+
 //playable characters
 let playMario = new Person("Mario", 150, [2, 2, 1], ["hit", "ink", "firearrow"]);
 let playYoshi = new Person("Yoshi", 100, [0.5, 0.5, 1.5], ["strike", "waterbomb", "fireball"]);
 let playLuigi = new Person("Luigi", 200, [3, 3, 2], ["kick", "watergun", "bullet"]);
 
 //computer players
-
-const goomba = new Person("Goomba", 75, [1, 1, 1], ["hit", "kick", "watergun"]);
-const squid = new Person("Squid", 100, [1, 0.2, 0.1], ["strike", "ink", "waterbomb"]);
-const bowser = new Person("Browser", 300, [2, 7, 0.7], ["strike", "ink", "bullet"]);
+const goomba = new Person("goomba", 75, [1, 1, 1], ["hit", "kick", "watergun"]);
+const squid = new Person("squid", 100, [1, 0.2, 0.1], ["strike", "ink", "waterbomb"]);
+const bowser = new Person("bowser", 300, [2, 7, 0.7], ["strike", "ink", "bullet"]);
 
 let computerPlayers = [goomba, squid, bowser];
 
@@ -104,7 +107,7 @@ function setMoveText() {
 }
 
 function characterSelect(character) {
-    document.getElementById('playerimg').src = "img/" + character + ".png";
+    playerImg.src = images[character];
     playerImg.style.display = 'block'
     document.getElementById('selectBox').style.display = 'none';
     if (character == "mario") {
@@ -138,7 +141,7 @@ function printHealth(person, textId) {
 }
 //helper function displaying death image
 function die(character) {
-    return character == player ? playerImg.src = deathImg : computerImg.src = deathImg;
+    return character == player ? playerImg.src = images["dead"] : computerImg.src = images["dead"];
 }
 // helper function reduces defenders health by value corresponding to attackers attackType
 function dealDamage(attacker, defender, attackType) {
@@ -201,6 +204,7 @@ function resetGame(){
         character = computerPlayers[ind];
         character.setHealth(character.maxHealth);
         character.setAlive(true);
+        startGame();
     }
 
     computer = computerPlayers[0];
@@ -220,6 +224,7 @@ function continueGame(){
     }else{
         computer = computerPlayers[level];
         player.setHealth(player.maxHealth);
+        computerImg.src = images[computer.name];
         inBattle = true;
         playerTurn = true;
     }
@@ -235,3 +240,10 @@ function resetOrContinue(){
         resetGame();
     }
 }
+//sets images at the start of the game
+function startGame(){
+    playerImg.src = images["mario"];
+    computerImg.src = images["goomba"];
+}
+
+startGame();
