@@ -130,7 +130,11 @@ function healthBarDraw(id, person) {
 //helper function for printing health text
 function printHealth(person, textId) {
     playerHealth = document.getElementById(textId);
-    playerHealth.innerHTML = (person.health);
+    if (person.health>3){
+        playerHealth.innerHTML = (person.health);
+    }else{
+        playerHealth.innerHTML = ("");
+    }
 }
 //helper function displaying death image
 function die(character) {
