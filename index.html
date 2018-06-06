@@ -10,21 +10,25 @@
 </head>
 
 <body>
+    <div id=endBattleModal>
+        <div id="endBattleText" onclick="resetOrContinue()">Placeholder1</div>
+        <div id="resetOrContinue" onclick="resetOrContinue()">Placeholder2</div>
+    </div>
     <div id="statbar">
         <div id="healthBar1"></div>
         <div id="healthBar2"></div>
     </div>
     <div id="mainbody">
-    <div class="playerSelect" id="selectBox">
-        <div class="character" id="characterOne" onclick="characterSelect('mario')"></div>
-        <div class="character" id="characterTwo" onclick="characterSelect('yoshi')"></div>
-        <div class="character" id="characterThree" onclick="characterSelect('luigi')"></div>
-    </div>
-    <div class="enemyList" id="eList">
-        <div class="enemy" id="enemyOne"></div>
-        <div class="enemy" id="enemyTwo"></div>
-        <div class="enemy" id="enemyThree"></div>
-    </div>
+        <div class="playerSelect" id="selectBox">
+            <div class="character" id="characterOne" onclick="characterSelect('mario')"></div>
+            <div class="character" id="characterTwo" onclick="characterSelect('yoshi')"></div>
+            <div class="character" id="characterThree" onclick="characterSelect('luigi')"></div>
+        </div>
+        <div class="enemyList" id="eList">
+            <div class="enemy" id="enemyOne"></div>
+            <div class="enemy" id="enemyTwo"></div>
+            <div class="enemy" id="enemyThree"></div>
+        </div>
         <div class="charstyle" id="playercon">
             <div class="boxes" id="box1">
                 <div id="boxoption1" onclick="fight(0)">Move1</div>
@@ -51,9 +55,7 @@
             </div>
         </div>
     </div>
-    <input type="button" onclick = "resetOrContinue()" value = "Continue">
     <script src="classes.js"></script>
-
 </body>
 
 </html>
