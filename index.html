@@ -21,9 +21,9 @@
         <div class="character" id="characterThree" onclick="characterSelect('luigi')"></div>
     </div>
     <div class="enemyList" id="eList">
-        <div class="enemy" id="enemyOne"></div>
-        <div class="enemy" id="enemyTwo"></div>
-        <div class="enemy" id="enemyThree"></div>
+        <img src = "img/goomba.png" class="enemy" id="enemyOne"></img>
+        <img src = "img/goomba.png" class="enemy" id="enemyTwo"></img>
+        <img src = "img/bowser.png" class="enemy" id="enemyThree"></img>
     </div>
         <div class="charstyle" id="playercon">
             <div class="boxes" id="box1">
@@ -49,9 +49,11 @@
             <div id="computer">
                 <img src="img/bowser.png" alt="Computer" class="playerimg" id="computerimg">
             </div>
+            <input type="button" onclick = "resetOrContinue()" value = "Continue">
         </div>
-        <input type="button" onclick = "resetOrContinue()" value = "Continue">
+
     </div>
+    
     <script src="classes.js"></script>
 
 </body>

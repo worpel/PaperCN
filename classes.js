@@ -51,12 +51,12 @@ let inBattle = true;
 let playerImg = document.getElementById('playerimg');
 //global computer image
 let computerImg = document.getElementById('computerimg');
-// global enemy 1 img
+
+// global enemy images
 let enemy1Img = document.getElementById('enemyOne');
-//global enemy 2 img
 let enemy2Img = document.getElementById('enemyTwo');
-//global enemy 3 img
 let enemy3Img = document.getElementById('enemyThree');
+
 //global move types
 const moves = {
     "hit": [0, 10],
@@ -96,7 +96,6 @@ let player = playMario;
 let computer = computerPlayers[0];
 
 // helper function sets html text by id
-
 function setText(id, message) {
     elementText = document.getElementById(id);
     elementText.innerHTML = message;
@@ -154,11 +153,11 @@ function die(character) {
 
 function killPlayer(character) {
     if(level === 0 && !playerTurn) {
-        enemy1Img.style.backgroundImage = "url(" + images["dead"+character._name] + ")";
+        enemy1Img.src = images["dead"+character._name];
     } else if (level === 1 && !playerTurn) {
-        enemy2Img.style.backgroundImage = "url(" + images["dead"+character._name] + ")";
+        enemy2Img.src= images["dead"+character._name];
     } else if (level === 2 && !playerTurn) {
-        enemy3Img.style.backgroundImage = "url(" + images["dead"+character._name] + ")";
+        enemy3Img.src= images["dead"+character._name];
     }
 }
 // helper function reduces defenders health by value corresponding to attackers attackType
@@ -261,10 +260,9 @@ function resetOrContinue(){
 function startGame(){
     playerImg.src = images["mario"];
     computerImg.src = images["goomba"];
-    enemy1Img.style.backgroundImage = "url('img/goomba.png')";
-    enemy2Img.style.backgroundImage = "url('img/squid.png')";
-    enemy3Img.style.backgroundImage = "url('img/bowser.png')";
-    console.log(playerImg);
+    enemy1Img.src = images["goomba"];
+    enemy2Img.src =  images["squid"];
+    enemy3Img.src = images["bowser"];
 }
 
 startGame();
