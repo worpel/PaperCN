@@ -7,7 +7,8 @@
 body {
     background-image: url(img/background.jpg);
     background-repeat: no-repeat;
-    background-size: 110vw 100vh;
+    background-size: 100% 100%;
+    background-color: black;
 }
 
 #statbar {
@@ -39,7 +40,7 @@ body {
     justify-content: space-around;
     align-items: center;
     width: 100vw;
-    height: 90vh;
+    height: 95vh;
 }
 
 .playerSelect {
@@ -71,21 +72,21 @@ body {
     background-image: url("img/mariopaper.png");
     background-size: 68%;
     background-repeat: no-repeat;
-    background-position: center; 
+    background-position: center;
 }
 
-#characterOne:hover { 
+#characterOne:hover {
     background-color: rgba(0, 0, 0, 0.7);
 }
 
 #characterTwo {
     background-image: url("img/yoshi.png");
-    background-size: 74%;
+    background-size: 72%;
     background-repeat: no-repeat;
-    background-position: center; 
+    background-position: center;
 }
 
-#characterTwo:hover { 
+#characterTwo:hover {
     background-color: rgba(0, 0, 0, 0.7);
 }
 
@@ -93,10 +94,10 @@ body {
     background-image: url("img/luigi.png");
     background-size: 62%;
     background-repeat: no-repeat;
-    background-position: center; 
+    background-position: center;
 }
 
-#characterThree:hover { 
+#characterThree:hover {
     background-color: rgba(0, 0, 0, 0.7);
 }
 
