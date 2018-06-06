@@ -65,7 +65,7 @@ const moves = {
     "bullet": [2, 30]
 };
 // counts level
-let level = 0;
+let level = 1;
 
 //playable characters
 const playMario = new Person("Mario", 150, [2, 2, 1], ["hit", "ink", "firearrow"]);
@@ -78,7 +78,7 @@ const goomba = new Person("Goomba", 75 * (1 + (level / 20)), [1, 1, 1], ["hit", 
 const squid = new Person("Squid", 100 * (1 + (level / 20)), [1, 0.2, 0.1], ["strike", "ink", "waterbomb"]);
 const bowser = new Person("Browser", 300 * (1 + (level / 20)), [2, 7, 0.7], ["strike", "ink", "bullet"]);
 
-const computerPlayers = [goomba, squid, bowser];
+
 //creates player and computer characters
 let player = new Person("Harry", 1, [0.5, 1, 2], ["hit", "ink", "bullet"]);
 const computer = new Person("DrEvil", 150, [1, 2, 1], ["strike", "ink", "bullet"]);
@@ -103,7 +103,6 @@ function setMoveText() {
 }
 
 function characterSelect(character) {
-    document.body.style.backgroundColor = '#AAA';
     document.getElementById('playerimg').src = "img/" + character + ".png";
     playerImg.style.display = 'block'
     document.getElementById('selectBox').style.display = 'none';
