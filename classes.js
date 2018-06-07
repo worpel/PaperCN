@@ -155,14 +155,14 @@ function die(character) {
         message = "You defeated " + computer.name +"!";
         //checks for defeating last enemy
         if (level == computerPlayers.length-1){
-            message += "All of " + player.name + "'s opponents have been eviscerated, Victory is yours!!!";
+            message += "\n" + player.name + " is victorious!!!";
         }else{
             buttonText = "Continue"
         }
     }
     setText("endBattleText", message);
     setText("endBattleButton", buttonText);
-    document.getElementById('endBattleModal').style.display = 'none';
+    document.getElementById('endBattleModal').style.display = 'flex';
     //display dead character image
     return character == player ? playerImg.src = images["dead"] : computerImg.src = images["dead"], killPlayer(character);
 }
