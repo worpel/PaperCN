@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Playfair+Display|Yanone+Kaffeesatz');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display|Yanone+Kaffeesatz|Bowlby+One+SC');
 * {
   margin: 0;
   padding: 0;
@@ -12,6 +12,7 @@ body {
 }
 
 #endBattleModal-overlay {
+  position: fixed;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
@@ -21,25 +22,46 @@ body {
 #endBattleModal {
   display: flex;
   position: fixed;
-  align-items: center;
   justify-content: center;
-  flex-direction: column;
-  text-align: center;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   z-index: 2;
 }
 
 #endBattleModal-content {
   display: flex;
+  width: 50vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+  z-index: 2;
+  font-family: Bowlby One SC;
+  text-shadow: 2px 2px white;
+  color: black;
+  font-size: 3rem;
+}
+
+.modalBoxStyle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
 }
 
 #endBattleText {
-  position: fixed;
+  width: 50vw;
+  height: 20vh;
+  z-index: 2;
+  background-color: blue;
 }
 
 #endBattleButton {
-  position: fixed;
+  width: 50vw;
+  height: 20vh;
+  z-index: 2;
+  background-color: green;
 }
 
 #statbar {
