@@ -1,182 +1,194 @@
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display|Yanone+Kaffeesatz');
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    background-image: url(img/mario-background.jpg);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-color: black;
+  background-image: url(img/mario-background.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-color: black;
+}
+
+#endBattleModal {
+  display: flex;
+  position: fixed;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+#endBattleText {
+  position: fixed;
+}
+
+#endBattleButton {
+  position: fixed;
 }
 
 #statbar {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: space-between;
-    width: 100vw;
-    height: 5vh;
-    color: white;
-    font-family: Playfair Display;
-    font-size: 1.5rem;
+  width: 100vw;
+  color: white;
+  font-family: Playfair Display;
+  font-size: 1.5rem;
 }
 
 #healthBar1 {
-    width: 50vw;
-    height: 5vh;
-    background-color: #A4EC2A;
+  width: 50vw;
+  height: 5vh;
+  background-color: #a4ec2a;
 }
 
 #healthBar2 {
-    width: 50vw;
-    height: 5vh;
-    background-color: #FF5A5A;
+  width: 50vw;
+  height: 5vh;
+  background-color: #ff5a5a;
 }
 
 #mainbody {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100vw;
-    height: 95vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100vw;
+  height: 95vh;
 }
 
-.playerSelect {
-    border: 2px solid;
-    position: absolute;
-    top: 10%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width: 74vw;
-    height: 46vh;
-    z-index: 1;
-    background-color: rgb(90, 184, 255);
-}
+/* .playerSelect {
+  border: 2px solid;
+  position: absolute;
+  top: 10%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 74vw;
+  height: 46vh;
+  z-index: 1;
+  background-color: rgb(90, 184, 255);
+} */
 
 .character {
-    border: 3px solid black;
-    display: flex;
-    align-content: space-between;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    padding: 16%;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.5);
+  border: 3px solid black;
+  display: flex;
+  align-content: space-between;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 16%;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 #characterOne {
-    background-image: url("img/mario.png");
-    background-size: 68%;
-    background-repeat: no-repeat;
-    background-position: center;
+  background-image: url('img/mario.png');
+  background-size: 68%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 #characterOne:hover {
-    background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 #characterTwo {
-    background-image: url("img/yoshipaper.png");
-    background-size: 74%;
-    background-repeat: no-repeat;
-    background-position: center;
+  background-image: url('img/yoshipaper.png');
+  background-size: 74%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 #characterTwo:hover {
-    background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 #characterThree {
-    background-image: url("img/luigipaper.png");
-    background-size: 62%;
-    background-repeat: no-repeat;
-    background-position: center;
+  background-image: url('img/luigipaper.png');
+  background-size: 62%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 #characterThree:hover {
-    background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .enemyList {
-    position: absolute;
-    top: 20%;
-    left: 91%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width: 5.5vw;
-    height: 30vh;
+  position: absolute;
+  top: 20%;
+  left: 91%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 5.5vw;
+  height: 30vh;
 }
 
 .enemy {
-    border: 3px solid black;
-    display: flex;
-    align-content: space-between;
-    flex-wrap: wrap;
-    justify-content: start;
-    padding: 10%;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.5);
-    max-width: 100%;
+  border: 3px solid black;
+  display: flex;
+  align-content: space-between;
+  flex-wrap: wrap;
+  justify-content: start;
+  padding: 10%;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  max-width: 100%;
 }
 
 .charstyle {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-    width: 20vw;
-    height: 60vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  width: 20vw;
+  height: 60vh;
 }
 
 .boxes {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 100vw;
-    height: 15vh;
-    text-align: center;
-    font-family: Yanone Kaffeesatz;
-    font-size: 1.2rem;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100vw;
+  height: 15vh;
+  text-align: center;
+  font-family: Yanone Kaffeesatz;
+  font-size: 1.2rem;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 #boxoption1,
 #boxoption2,
 #boxoption3 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 #line {
-    width: 100%;
+  width: 100%;
 }
 
 .playerimg {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 #player {
-    width: 80%;
-    height: 60%;
-    display: flex;
-    justify-content: center;
-    transform: scaleX(-1);
+  width: 80%;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  transform: scaleX(-1);
 }
 
 #computer {
-    width: 100%;
-    height: 60%;
-    display: flex;
-    justify-content: center;
+  width: 100%;
+  height: 60%;
+  display: flex;
+  justify-content: center;
 }
