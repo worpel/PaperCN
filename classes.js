@@ -74,7 +74,7 @@ let level = 0;
 
 //image dictionary
 images = {"mario":"img/mario2.png", "yoshi": "img/yoshi.png", "luigi": "img/luigi.png",
-    "mario2D": "img/mario.png", "yoshi2D": "yoshipaper.png", "luigi2D": "img/luigipaper.png",
+    "mario2D": "img/mario.png", "yoshi2D": "yoshipaper.png", "luigi2D": "img/luigipaper.png", "explosion" : "img/explosion.gif",
     "dead":"img/death1.png", "goomba": "img/goomba.png", "squid": "img/squid.png", "bowser": "img/bowser.png", 
     "deadgoomba":"img/deadGoomba.png", "deadsquid": "img/deadSquid.png", "deadbowser": "img/deadBowser.png"
 };
@@ -162,10 +162,12 @@ function die(character) {
     }
     setText("endBattleText", message);
     setText("endBattleButton", buttonText);
-    document.getElementById('endBattleModal').style.display = 'flex';
-    document.getElementById("endBattleModal-overlay").style.display = 'block';
+    setTimeout( function() {
+        document.getElementById('endBattleModal').style.display = 'flex';
+        document.getElementById("endBattleModal-overlay").style.display = 'block';
+    }, 700)
     //display dead character image
-    return character == player ? playerImg.src = images["dead"] : computerImg.src = images["dead"], killPlayer(character);
+    return character == player ? playerImg.src = images["explosion"] : computerImg.src = images["explosion"], killPlayer(character);
 }
 
 function killPlayer(character) {
