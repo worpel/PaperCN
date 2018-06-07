@@ -12,33 +12,24 @@ body {
 }
 
 #endBattleModal {
-  /* display: none; */
+  display: flex;
   position: fixed;
+  align-items: center;
   text-align: center;
-  width: 100vw;
-  height: 100vh;
-  z-index: 1;
-  background-color: rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  z-index: 2;
 }
 
 #endBattleText {
-  display: block;
-  width: 25vw;
-  height: 10vh;
-  margin-top: 25%;
-  background-color: red;
+  position: fixed;
 }
 
-#resetOrContinue {
+#endBattleButton {
+  position: fixed;
 }
 
 #statbar {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: space-between;
   width: 100vw;
-  height: 5vh;
   color: white;
   font-family: Playfair Display;
   font-size: 1.5rem;
@@ -64,7 +55,7 @@ body {
   height: 95vh;
 }
 
-.playerSelect {
+/* .playerSelect {
   border: 2px solid;
   position: absolute;
   top: 10%;
@@ -76,7 +67,7 @@ body {
   height: 46vh;
   z-index: 1;
   background-color: rgb(90, 184, 255);
-}
+} */
 
 .character {
   border: 3px solid black;
