@@ -12,14 +12,17 @@
 <body>
     <div id="endBattleModal-overlay"></div>
     <div id="endBattleModal">
-        <div id="endBattleText" onclick="resetOrContinue()">Placeholder1</div>
-        <div id="endBattleButton" onclick="resetOrContinue()">Placeholder2</div>
+        <div id="endBattleModal-content">
+            <div id="endBattleText" onclick="resetOrContinue()">Placeholder1</div>
+            <div id="endBattleButton" onclick="resetOrContinue()">Placeholder2</div>
+        </div>
     </div>
     <div id="statbar">
         <div id="healthBar1"></div>
         <div id="healthBar2"></div>
     </div>
     <div id="mainbody">
+        <div id="selectBox-background"></div>
         <div class="playerSelect" id="selectBox">
             <div class="character" id="characterOne" onclick="characterSelect('mario')"></div>
             <div class="character" id="characterTwo" onclick="characterSelect('yoshi')"></div>
@@ -54,7 +57,6 @@
             <div id="computer">
                 <img src="img/bowser.png" alt="Computer" class="playerimg" id="computerimg">
             </div>
-            <input type="button" onclick="resetOrContinue()" value="Continue">
         </div>
 
     </div>
