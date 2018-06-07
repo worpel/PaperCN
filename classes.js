@@ -38,6 +38,7 @@ class Person {
         if (this._health <= 0) {
             this._health = 0;
             this._alive = false;
+            inBattle = false;
         }
     }
 }
@@ -50,6 +51,12 @@ let inBattle = true;
 let playerImg = document.getElementById('playerimg');
 //global computer image
 let computerImg = document.getElementById('computerimg');
+
+// global enemy images
+let enemy1Img = document.getElementById('enemyOne');
+let enemy2Img = document.getElementById('enemyTwo');
+let enemy3Img = document.getElementById('enemyThree');
+
 //global move types
 const moves = {
     "hit": [0, 10],
@@ -67,9 +74,10 @@ let level = 0;
 
 //image dictionary
 images = {"mario":"img/mario2.png", "yoshi": "img/yoshi.png", "luigi": "img/luigi.png",
-        "mario2D": "img/mario.png", "yoshi2D": "yoshipaper.png", "luigi2D": "img/luigipaper.png",
-         "dead":"img/death1.png", 
-        "goomba": "img/goomba.png", "squid": "img/squid.png", "bowser": "img/bowser.png" };
+    "mario2D": "img/mario.png", "yoshi2D": "yoshipaper.png", "luigi2D": "img/luigipaper.png",
+    "dead":"img/death1.png", "goomba": "img/goomba.png", "squid": "img/squid.png", "bowser": "img/bowser.png", 
+    "deadgoomba":"img/deadGoomba.png", "deadsquid": "img/deadSquid.png", "deadbowser": "img/deadBowser.png"
+};
 
 //playable characters
 let playMario = new Person("Mario", 150, [2, 2, 1], ["hit", "ink", "firearrow"]);
@@ -88,7 +96,6 @@ let player = playMario;
 let computer = computerPlayers[0];
 
 // helper function sets html text by id
-
 function setText(id, message) {
     elementText = document.getElementById(id);
     elementText.innerHTML = message;
@@ -141,7 +148,17 @@ function printHealth(person, textId) {
 }
 //helper function displaying death image
 function die(character) {
-    return character == player ? playerImg.src = images["dead"] : computerImg.src = images["dead"];
+    return character == player ? playerImg.src = images["dead"] : computerImg.src = images["dead"], killPlayer(character);
+}
+
+function killPlayer(character) {
+    if(level === 0 && !playerTurn) {
+        enemy1Img.src = images["dead"+character._name];
+    } else if (level === 1 && !playerTurn) {
+        enemy2Img.src= images["dead"+character._name];
+    } else if (level === 2 && !playerTurn) {
+        enemy3Img.src= images["dead"+character._name];
+    }
 }
 // helper function reduces defenders health by value corresponding to attackers attackType
 function dealDamage(attacker, defender, attackType) {
@@ -204,7 +221,7 @@ function resetGame(){
         character = computerPlayers[ind];
         character.setHealth(character.maxHealth);
         character.setAlive(true);
-        startGame();
+    startGame();
     }
 
     computer = computerPlayers[0];
@@ -213,7 +230,6 @@ function resetGame(){
     inBattle = true;
     playerTurn = true;
     drawEverything();
-
 }
 //progesses onto the next character
 function continueGame(){
@@ -244,6 +260,9 @@ function resetOrContinue(){
 function startGame(){
     playerImg.src = images["mario"];
     computerImg.src = images["goomba"];
+    enemy1Img.src = images["goomba"];
+    enemy2Img.src =  images["squid"];
+    enemy3Img.src = images["bowser"];
 }
 
 startGame();

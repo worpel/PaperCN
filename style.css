@@ -131,30 +131,10 @@ body {
   align-content: space-between;
   flex-wrap: wrap;
   justify-content: start;
-  padding: 100%;
+  padding: 10%;
   color: white;
   background-color: rgba(0, 0, 0, 0.5);
-}
-
-#enemyOne {
-  background-image: url('img/goomba.png');
-  background-size: 68%;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-#enemyTwo {
-  background-image: url('img/squid.png');
-  background-size: 74%;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-#enemyThree {
-  background-image: url('img/bowser.png');
-  background-size: 80%;
-  background-repeat: no-repeat;
-  background-position: center;
+  max-width: 100%;
 }
 
 .charstyle {
