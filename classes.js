@@ -146,8 +146,24 @@ function printHealth(person, textId) {
         playerHealth.innerHTML = ("");
     }
 }
-//helper function displaying death image
+//helper function displaying death image and between battle modal
 function die(character) {
+    let message = "You have been defeated!"
+    let buttonText = "Restart?"
+    //computer defeated
+    if (character == computer){
+        message = "You defeated " + computer.name +"!";
+        //checks for defeating last enemy
+        if (level == computerPlayers.length-1){
+            message += "All of " + player.name + "'s opponents have been eviscerated, Victory is yours!!!";
+        }else{
+            buttonText = "Continue"
+        }
+    }
+    setText("endBattleText", message);
+    setText("endBattleButton", buttonText);
+    document.getElementById('endBattleModal').style.display = 'none';
+    //display dead character image
     return character == player ? playerImg.src = images["dead"] : computerImg.src = images["dead"], killPlayer(character);
 }
 
@@ -233,6 +249,7 @@ function resetGame(){
 }
 //progesses onto the next character
 function continueGame(){
+    document.getElementById('endBattleModal').style.display = 'none';
     level += 1;
     if (level >= computerPlayers.length){
         console.log("you win");
