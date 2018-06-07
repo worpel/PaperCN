@@ -280,6 +280,7 @@ function startGame(){
     enemy1Img.src = images["goomba"];
     enemy2Img.src =  images["squid"];
     enemy3Img.src = images["bowser"];
+    document.getElementById('endBattleModal').style.display = 'none';
 }
 
 startGame();
