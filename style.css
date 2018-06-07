@@ -31,7 +31,6 @@ body {
 
 #endBattleModal-content {
   display: flex;
-  width: 50vw;
   height: 100vh;
   justify-content: center;
   align-items: center;
@@ -39,8 +38,8 @@ body {
   flex-wrap: wrap;
   z-index: 2;
   font-family: Bowlby One SC;
-  text-shadow: 2px 2px white;
-  color: black;
+  text-shadow: 2px 5px black;
+  color: white;
   font-size: 3rem;
 }
 
@@ -52,8 +51,8 @@ body {
 }
 
 #endBattleText {
-  width: 50vw;
-  height: 20vh;
+  width: 80vw;
+  height: 40vh;
   z-index: 2;
   background-color: blue;
 }

@@ -155,14 +155,15 @@ function die(character) {
         message = "You defeated " + computer.name +"!";
         //checks for defeating last enemy
         if (level == computerPlayers.length-1){
-            message += "All of " + player.name + "'s opponents have been eviscerated, Victory is yours!!!";
+            message += "\n" + player.name + " is victorious!!!";
         }else{
             buttonText = "Continue"
         }
     }
     setText("endBattleText", message);
     setText("endBattleButton", buttonText);
-    document.getElementById('endBattleModal').style.display = 'none';
+    document.getElementById('endBattleModal').style.display = 'flex';
+    document.getElementById("endBattleModal-overlay").style.display = 'block';
     //display dead character image
     return character == player ? playerImg.src = images["dead"] : computerImg.src = images["dead"], killPlayer(character);
 }
@@ -250,6 +251,7 @@ function resetGame(){
 //progesses onto the next character
 function continueGame(){
     document.getElementById('endBattleModal').style.display = 'none';
+    document.getElementById("endBattleModal-overlay").style.display = 'none';
     level += 1;
     if (level >= computerPlayers.length){
         console.log("you win");
@@ -281,6 +283,7 @@ function startGame(){
     enemy2Img.src =  images["squid"];
     enemy3Img.src = images["bowser"];
     document.getElementById('endBattleModal').style.display = 'none';
+    document.getElementById("endBattleModal-overlay").style.display = 'none';
 }
 
 startGame();
