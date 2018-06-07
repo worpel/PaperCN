@@ -17,6 +17,7 @@ body {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 1;
+  display: none;
 }
 
 #endBattleModal {
@@ -67,8 +68,8 @@ body {
 #statbar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   text-align: center;
+  justify-content: space-between;
   width: 100vw;
   color: white;
   font-family: Playfair Display;
@@ -78,13 +79,13 @@ body {
 #healthBar1 {
   width: 50vw;
   height: 5vh;
-  background-color: #a4ec2a;
+  background-color: #A4EC2A;
 }
 
 #healthBar2 {
   width: 50vw;
   height: 5vh;
-  background-color: #ff5a5a;
+  background-color: #FF5A5A;
 }
 
 #mainbody {
@@ -105,7 +106,7 @@ body {
   align-items: center;
   width: 74vw;
   height: 46vh;
-  z-index: 2;
+  z-index: 1;
   background-color: rgb(90, 184, 255);
 }
 
@@ -121,7 +122,7 @@ body {
 }
 
 #characterOne {
-  background-image: url('img/mario.png');
+  background-image: url("img/mario.png");
   background-size: 68%;
   background-repeat: no-repeat;
   background-position: center;
@@ -132,7 +133,7 @@ body {
 }
 
 #characterTwo {
-  background-image: url('img/yoshipaper.png');
+  background-image: url("img/yoshipaper.png");
   background-size: 74%;
   background-repeat: no-repeat;
   background-position: center;
@@ -143,7 +144,7 @@ body {
 }
 
 #characterThree {
-  background-image: url('img/luigipaper.png');
+  background-image: url("img/luigipaper.png");
   background-size: 62%;
   background-repeat: no-repeat;
   background-position: center;
